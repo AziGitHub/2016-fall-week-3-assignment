@@ -8,65 +8,76 @@
  * if price is a range, use the upper end of that range
  * and add them to the "productList" array using array.push()
  */
-var p1={
-    manufacturer: "ASICS",
-        name: "Men's GEL Venture 5 Running Shoe",
+ var P1 = {
+    name: "Men's GEL Venture 5 Running Shoe",
     price: 79.95,
-    review: 3446};
+    maker: "ASICS"
+ };
 
-var p2={
-    manufacturer: "JACKSHIBO",
-        name: "JACKSHIBO Men Women Unisex Couple Casual Fashion Sneakers Breathable Athletic Sports Shoes",
+ var P2 = {
+    name: "JACKSHIBO Men Women Unisex Couple Casual Fashion Sneakers Breathable Athletic Sports Shoes",
     price: 32.99,
-    review: 917};
+    maker: "JACKSHIBO"
+};
 
-var p3={
-    manufacturer: "Champion",
-        name: "Champion Women's Gusto Cross Trainer",
+var P3 = {
+    name: "Champion Women's Gusto Cross Trainer",
     price: 39.97,
-    review: 89};
-var p4={
-    manufacturer: "PUMA",
-        name: "PUMA Adult Suede Classic Shoe",
+    maker: "Champion",
+};
+
+var P4 = {
+	name: "PUMA Adult Suede Classic Shoe",
     price: 168.32,
-    review: 2588};
+    maker: "PUMA",
+};
 
 var productList = []; //this is an array
+
 //Your code here
 //Hint: productList.push(newObject) will add the object you just created to the array
-productList.push(p1);
-productList.push(p2);
-productList.push(p3);
-productList.push(p4);
 
+productList.push(P1);
+productList.push(P2);
+productList.push(P3);
+productList.push(P4);
+
+//console.log(productList[0]);
 
 /* Step 2
  * Iterate (or go through) productList one by one using the for loop
  * and for each product, if the price is below $50, console.log a message like below
  * "The product [name] costs [price], and is a match"
  */
-for(var i=0;i<productList.length;i++)
-{ if(productList[i].price<50){
-    console.log("The product " +productList[i].name +" costs " + productList[i].price + ", and is a match");}
-}
 
+for(var i = 0; i < productList.length; i++){
+
+    //Your code here
+
+if(productList[i].price<50){
+    console.log("The product " + productList[i].name + " costs " + productList[i].price +", and is a match");
+}
+}
 
 /* Step 3
  * What is the average price of all the products?
  */
 
 //3.1 first, calculate total price using the for loop again
-var TotalPrice=0;
-for(var i=0;i<productList.length;i++)
-{
-    TotalPrice+=productList[i].price;
+
+var TotalPrice = 0;
+for(var i = 0; i < productList.length; i++){
+    TotalPrice = TotalPrice + productList[i].price;
 }
 
-console.log(TotalPrice);
+console.log("Total price is " + TotalPrice);
 
 //3.2 then, divide total price by the number of products, using proudctList.length
-var avgPrice=TotalPrice/productList.length;
-console.log(avgPrice);
+
+var avgPrice = TotalPrice / productList.length;
+console.log ("The average price is " + avgPrice);
+
+
 /* Step 4
  * Write a function that accept a single argument, price
  * so that the function returns the number of products below that price
@@ -77,10 +88,11 @@ function comparePrice(p){
     var numOfMatchingProducts = 0;
 
     //Your code here
-    for(var i=0;i<productList.length;i++)
-    {
+
+    for(var i = 0; i < productList.length; i++){
         if(productList[i].price<p){numOfMatchingProducts++;}
-    }
+}
+
     return numOfMatchingProducts;
 }
 
